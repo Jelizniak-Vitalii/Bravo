@@ -1,0 +1,24 @@
+<app-logo></app-logo>
+<div class="verification">
+  <form class="form">
+    <h2 class="form__title">Please check your email</h2>
+    <p class="from__subTitle">
+      We use this login code so you don’t have
+      to remember or type in yet another long password
+    </p>
+    <small class="form__login_code">Code is invalid</small>
+    <div class="form__group_input" [formGroup]="form">
+      <input (input)="checkForm()" maxLength="3" formControlName="firstVerificationNumber" #firstVerificationNumber>
+
+      <span></span>
+      <input (input)="checkForm()" maxLength="3" formControlName="secondVerificationNumber" #secondVerificationNumber>
+    </div>
+    <small class="form__invalid_code">Code is invalid</small>
+    <div class="loader"></div>
+    <p class="form__text">
+      We've sent a 6 digit login code to <strong>example@email.com</strong>
+      Can't find it? Check your spam folder.
+    </p>
+  </form>
+</div>
+

@@ -1,0 +1,20 @@
+<app-logo></app-logo>
+<div class="logIn">
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2 class="form__title">Log In</h2>
+    <small class="form_email">Your Email</small>
+    <div class="form__custom_input">
+      <input formControlName="email" class="form__input" placeholder="email@example.com" name="email">
+    </div>
+    <div *ngIf="form.get('email')?.status == 'INVALID' && form.get('email')?.touched" class="form__validation">
+      <small *ngIf="form.get('email')?.errors?.required">Write something</small>
+      <small *ngIf="form.get('email')?.dirty && form.get('email')?.value.length > 0">Your email is incorrect</small>
+    </div>
+    <p class="form__text">
+      Enter the email you signed up with
+      to receive your login code
+    </p>
+    <button class="form__button" type="submit">Log In</button>
+  </form>
+</div>
+
