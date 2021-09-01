@@ -1,0 +1,25 @@
+<div class="confirmation">
+ <div class="confirmation__logo">
+   <a><img src="./assets/images/logo/fullLogo.png"></a>
+ </div>
+  <div class="confirmation__content">
+    <h3 class="confirmation__title">Let’s get you signed in</h3>
+    <p class="confirmation__subTitle">
+      We use this login code so you don’t have
+      to remember or type in yet another long password
+    </p>
+    <div class="key" >
+<!--      <span *ngFor="let i of a">{{ i }}</span>-->
+      <div class="key__first" *ngFor="let i of firstKey">{{ i }}</div>
+      <span class="key__line"></span>
+      <div class="key__second" *ngFor="let a of secondKey">{{ a }}</div>
+    </div>
+    <p class="confirmation__text">Note that this code is only valid for 15 minutes.</p>
+    <span class="line"></span>
+    <div class="confirmation__contact">
+      If you have any question, don’t hesitate
+      to contact us via <a href="email: contact@orderbravo.com">contact@orderbravo.com</a>
+    </div>
+  </div>
+
+</div>

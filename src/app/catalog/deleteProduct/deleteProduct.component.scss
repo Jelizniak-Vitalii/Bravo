@@ -1,0 +1,79 @@
+@mixin fontManrope {
+  font-family: 'Manrope', 'Open Sans';
+}
+
+.delete__content {
+  margin: 10% auto;
+  position: relative;
+  max-width: 424px;
+  background-color: #fff;
+  padding: 22px 24px 20px 24px;
+  border-radius: 8px;
+  .delete__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .delete__title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 132%;
+      color: #000000;
+      @include fontManrope
+    }
+    .delete__close:hover {
+      transdelete: scale(1.4);
+    }
+  }
+  .delete__text {
+    margin-top: 10px;
+    color: #000;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: 'Manrope', 'Open Sans';
+  }
+}
+
+.delete__line {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 88px;
+  left: 0;
+  background-color:  #E0E0E0;
+}
+
+.delete__btnGroup {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 41px;
+  .delete__btn_cancel {
+    padding: 12px 16px;
+    border: 1px solid #C0C0C0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    @include fontManrope;
+    background-color: transparent;
+    margin-right: 16px;
+  }
+  .delete__btn_delete {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    @include fontManrope;
+    background: #F5413D;
+    color: #FCD0CF;
+    img {
+      margin-right: 16px;
+    }
+  }
+}
+

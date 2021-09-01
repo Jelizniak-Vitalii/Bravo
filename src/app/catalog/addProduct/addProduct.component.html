@@ -1,0 +1,44 @@
+<app-modal-window>
+  <form class="form" [formGroup]="form" (ngSubmit)="addProduct()">
+    <div class="form__header">
+      <h3 class="form__title">Add Product</h3>
+      <img class="form__close" src="./assets/images/search/close.png" mat-button mat-dialog-close>
+    </div>
+    <div class="form__input">
+      <label for="productCode">Product Code</label>
+      <input id="productCode" formControlName="productCode">
+    </div>
+    <div class="form__input">
+      <label for="name">Product Name</label>
+      <input id="name" formControlName="productName">
+    </div>
+
+    <div class="form__input_groupe">
+      <div class="form__input">
+        <label for="unit">Unit</label>
+        <input id="unit" formControlName="unit">
+      </div>
+      <div class="form__input">
+        <label for="price">Price</label>
+        <input id="price" formControlName="price">
+      </div>
+    </div>
+
+    <div class="select">
+      <small>Availability</small>
+      <select formControlName="select" class="form__select">
+        <option>In stock</option>
+        <option>Out of stock</option>
+        <option>Discontinued</option>
+      </select>
+    </div>
+
+    <span class="form__line"></span>
+    <div class="form__btnGroup">
+      <button mat-button mat-dialog-close (click)="this.form.reset()" class="form__btn_cancel">Cancel</button>
+      <button type="submit" class="form__btn_save">
+        <img src="./assets/images/catalog/check.png">Add Product
+      </button>
+    </div>
+  </form>
+</app-modal-window>

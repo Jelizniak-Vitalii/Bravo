@@ -1,0 +1,80 @@
+.registration__logo {
+  margin: 60px 0px 100px 40px;
+}
+.registration {
+  .form {
+    margin: 0 auto;
+    text-align: center;
+    padding: 70px 48px 78px 48px;
+    max-width: 440px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    .form__title{
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 44px;
+    }
+    .form_email{
+      display: flex;
+      margin: 4px 0 2px 15px;
+      font-size: 12px;
+      line-height: 130%;
+      letter-spacing: 0.03em;
+    }
+    .form__input{
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #818181;
+      width: 100%;
+      padding: 12px 0 12px 12px;
+      border: 1px solid #A1A1A1;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    .form__validation,small{
+      display: flex;
+      margin: 4px 0 2px 15px;
+      color: #F5413D;
+      font-size: 12px;
+      line-height: 130%;
+      letter-spacing: 0.03em;
+    }
+    .form__text{
+      font-size: 12px;
+      line-height: 130%;
+      color: #414141;
+      letter-spacing: 0.03em;
+      padding: 0 55px 5px 55px;
+    }
+    .form__button{
+      font-size: 16px;
+      line-height: 150%;
+      color: #C5DCFA;
+      background-color: #1672EC;
+      padding: 12px 0;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: none;
+
+    }
+  }
+}
+
+.example-section {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form__checkboxGroup::ng-deep {
+  .mat-checkbox-layout {
+    margin: 0 25px 21px 0;
+  }
+  .mat-checkbox-inner-container {
+    border: 2px solid #818181;
+  }
+}
+

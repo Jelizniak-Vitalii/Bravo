@@ -1,0 +1,11 @@
+<div class="search">
+  <input
+    #search
+    class="search__input"
+    placeholder="Customer No, Name, Address..."
+    [(ngModel)]="value"
+    (ngModelChange)="onChange($event)">
+  <img class="search__img" src="./assets/images/search/search.png">
+  <img (click)="clearSearch()" class="search__close" src="./assets/images/search/close.png">
+</div>
+

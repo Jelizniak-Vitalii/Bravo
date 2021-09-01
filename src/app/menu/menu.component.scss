@@ -1,0 +1,87 @@
+@import "../shared/colorStyle/menuColor";
+@mixin fontManroop {
+  font-family: 'Manrope', 'Open Sans';
+}
+
+
+.menu {
+  max-width: 240px;
+  border-right: 1px solid #E0E0E0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .menu__navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .activeLogo {
+      width: 32px;
+      margin: 20px 0px 48px 20px;
+      img {
+        width: 100%;
+      }
+    }
+    .menu__logo {
+      width: 110px;
+
+      img {
+        width: 100%;
+      }
+      margin: 20px 0px 48px 20px;
+    }
+    .menu__nav {
+      .menu__nav_ul {
+        .active {
+          background: #C5DCFA;
+        }
+        .activeLi {
+          padding: 15px 24px;
+          transition: 0.5s;
+        }
+        .menu__img {
+          min-width: 30px;
+          min-height: 30px;
+          text-align: center;
+          padding-top: 4px;
+        }
+        .menu__nav_li {
+          display: flex;
+          align-items: center;
+          padding: 14px 88px 14px 34px;
+          transition: 0.5s;
+          span {
+            margin-left: 21px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 150%;
+            color: $menu-text;
+            @include fontManroop;
+          }
+        }
+      }
+    }
+  }
+  .menu__logOut {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px 24px 20px;
+    .menu__btn_logOut {
+      margin-left: 23px;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+      color: $menu-text;
+      @include fontManroop
+    }
+  }
+}
+.menu__nav_ul .active{
+  background: #C5DCFA;
+  color: #1672EC;
+  border-radius: 0px 12px 12px 0px;
+}
+
+
+

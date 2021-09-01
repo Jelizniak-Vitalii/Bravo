@@ -1,0 +1,50 @@
+<div class="registration__logo">
+<app-logo></app-logo>
+</div>
+<div class="registration">
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2 class="form__title">Registration</h2>
+    <span class="form_email">Your Email</span>
+    <div class="form__custom_input">
+      <input formControlName="email" class="form__input" placeholder="email@example.com" name="email">
+    </div>
+    <div *ngIf="form.get('email')?.status == 'INVALID' && form.get('email')?.touched" class="form__validation">
+      <small *ngIf="form.get('email')?.errors?.required">Write something</small>
+      <small *ngIf="form.get('email')?.dirty && form.get('email')?.value.length > 0">Your email is incorrect</small>
+    </div>
+    <small *ngIf="registeredUser">This email is already registered</small>
+    <p class="form__text">
+      Enter the email you signed up with
+      to register
+    </p>
+
+    <div>
+      <label for="customer">Customer No</label>
+      <input id="customer" class="form__input" formControlName="customerNo">
+    </div>
+    <div>
+      <label for="name">Name</label>
+      <input id="name" class="form__input" formControlName="userName">
+    </div>
+
+    <div>
+      <label for="address">Address</label>
+      <input id="address" class="form__input" formControlName="deliveryAddress">
+    </div>
+
+    <div class="form__checkboxGroup">
+      <span class="form__checkboxGroupe_title">Delivery Days</span>
+      <section class="example-section" [formGroup]="days">
+        <p><mat-checkbox formControlName="mon">Mon</mat-checkbox></p>
+        <p><mat-checkbox formControlName="tue">Tue</mat-checkbox></p>
+        <p><mat-checkbox formControlName="wed">Wed</mat-checkbox></p>
+        <p><mat-checkbox formControlName="thu">Thu</mat-checkbox></p>
+        <p><mat-checkbox formControlName="fri">Fri</mat-checkbox></p>
+        <p><mat-checkbox formControlName="sat">Sat</mat-checkbox></p>
+        <p><mat-checkbox formControlName="sun">Sun</mat-checkbox></p>
+      </section>
+    </div>
+    <button class="form__button" type="submit">Registration</button>
+  </form>
+</div>
+

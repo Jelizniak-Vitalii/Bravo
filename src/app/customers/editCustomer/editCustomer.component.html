@@ -1,0 +1,47 @@
+<app-modal-window>
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form__header">
+        <h3 class="form__title">Edit Customer</h3>
+        <img mat-button mat-dialog-close class="form__close" src="./assets/images/search/close.png">
+      </div>
+      <div class="form__input">
+        <label for="customerNo">Customer No</label>
+        <input id="customerNo" formControlName="customerNo">
+      </div>
+      <div class="form__input">
+        <label for="userName">Name</label>
+        <input id="userName" formControlName="userName">
+      </div>
+      <div class="form__input">
+        <label for="deliveryAddress">Delivery Address</label>
+        <input id="deliveryAddress" formControlName="deliveryAddress">
+      </div>
+
+      <div class="form__checkboxGroup">
+        <span class="form__checkboxGroupe_title">Delivery Days</span>
+        <section class="example-section" [formGroup]="form">
+          <p><mat-checkbox formControlName="mon">Mon</mat-checkbox></p>
+          <p><mat-checkbox formControlName="tue">Tue</mat-checkbox></p>
+          <p><mat-checkbox formControlName="wed">Wed</mat-checkbox></p>
+          <p><mat-checkbox formControlName="thu">Thu</mat-checkbox></p>
+          <p><mat-checkbox formControlName="fri">Fri</mat-checkbox></p>
+          <p><mat-checkbox formControlName="sat">Sat</mat-checkbox></p>
+          <p><mat-checkbox formControlName="sun">Sun</mat-checkbox></p>
+        </section>
+      </div>
+      <span class="form__line"></span>
+      <div class="form__btnGroup">
+        <button
+          mat-button mat-dialog-close
+          class="form__btn_cancel"
+          (click)="clear()"
+        >Cancel</button>
+        <button
+          type="submit"
+          class="form__btn_save">
+          <img src="./assets/images/customers/editCustomer/check.png">
+          Save
+        </button>
+      </div>
+    </form>
+</app-modal-window>

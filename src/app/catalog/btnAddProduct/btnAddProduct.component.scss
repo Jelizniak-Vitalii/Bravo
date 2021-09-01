@@ -1,0 +1,19 @@
+@mixin fontManrope {
+  font-family: 'Manrope', 'Open Sans';
+}
+
+.add-product {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #1672EC;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  @include fontManrope;
+  span {
+    color: #1672EC;
+    margin-right: 12px;
+    font-size: 30px;
+  }
+}

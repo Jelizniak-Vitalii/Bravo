@@ -1,1 +1,21 @@
 @import 'app/shared/style/reset';
+
+@font-face {
+  font-family: 'Manrope', 'Open Sans';
+  src: url("app/shared/fonts/Manrope-Bold.ttf");
+}
+@mixin fontManrope {
+  font-family: 'Manrope', 'Open Sans';
+}
+
+body {
+  height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+

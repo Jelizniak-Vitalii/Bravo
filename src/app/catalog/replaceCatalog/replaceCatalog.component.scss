@@ -1,0 +1,152 @@
+@mixin fontManrope {
+  font-family: 'Manrope', 'Open Sans';
+}
+
+.replace {
+  position: relative;
+  margin: 10% auto;
+  max-width: 440px;
+  background-color: #fff;
+  padding: 22px 24px 20px 24px;
+  border-radius: 8px;
+
+  .replace__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .form__close:hover {
+      transform: scale(1.4);
+    }
+  }
+  .replace__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 132%;
+    color: #000000;
+    @include fontManrope
+  }
+  .replace__text {
+    color: #000000;
+    font-size: 16px;
+    line-height: 150%;
+    @include fontManrope;
+  }
+}
+
+.download {
+  margin-top: 25px;
+  display: flex;
+  .download__link {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  .download__text {
+    color: #1672EC;
+    font-size: 12px;
+    line-height: 130%;
+    @include fontManrope;
+    margin-top: 3px;
+  }
+}
+
+
+.form__line {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 88px;
+  left: 0;
+  background-color: #E0E0E0;
+}
+
+.form__btnGroup {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 41px;
+
+  .form__btn_cancel {
+    padding: 12px 16px;
+    border: 1px solid #C0C0C0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    @include fontManrope;
+    background-color: transparent;
+    margin-right: 16px;
+  }
+
+  .form__btn_replace {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    @include fontManrope;
+    background: #1672EC;
+    color: #C5DCFA;
+
+    img {
+      margin-right: 16px;
+    }
+  }
+}
+
+.replace::ng-deep {
+  ngx-dropzone {
+    max-width: 392px;
+    background: rgba(197, 220, 250, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      color: #1672EC;
+      font-size: 12px;
+      line-height: 130%;
+      @include fontManrope;
+    }
+    ngx-dropzone-label {
+      display: flex;
+      align-items: center;
+      color: #1672EC;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+      @include fontManrope;
+    }
+  }
+
+}
+
+.drop {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 0px !important;
+  justify-content: center;
+  margin: 0px !important;
+  max-width: none !important;
+  height: 72px !important;
+  min-width: 0px !important;
+  padding: 16px !important;
+  min-height: 0px !important;
+  position: relative;
+  background: rgba(197, 220, 250, 0.5);
+
+  img {
+    margin-right: 12px;
+  }
+
+
+
+  ngx-dropzone-preview {
+
+  }
+}

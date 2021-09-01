@@ -1,0 +1,165 @@
+@mixin fontManrope {
+  font-family: 'Manrope', 'Open Sans';
+}
+$background:  #E5E5E5;
+
+
+:host {
+  width: 100%;
+  background-color: $background;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  .mat-table thead tr th{
+    background: transparent;
+  }
+  td{
+    color: #000000;
+    font-size: 16px;
+    line-height: 150%;
+    @include fontManrope;
+    border-bottom: 1px solid #C0C0C0
+  }
+  th {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 142%;
+    color: #000000;
+    @include fontManrope;
+    border-bottom: 1px solid #C0C0C0
+  }
+
+  th:hover {
+    border-bottom: 2px solid #1672EC;
+  }
+}
+
+
+.customers {
+
+  padding: 37px 24px 156px 24px;
+  //max-width: 1152px;
+  .customers__content {
+    background-color: #fff;
+    margin-top: 25px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    .customers__menu {
+      display: flex;
+      align-items: center;
+      padding: 18px 0px 18px 26px;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .customers__menu_items {
+      margin-right: 15%;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 142%;
+      @include fontManrope;
+      img {
+        margin-left: 16px;
+      }
+    }
+  }
+  .customers__data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 66px 0 57px 0;
+    border-bottom: 1px solid #C0C0C0;
+    .customers__dataImg {
+      width: 88px;
+      height: 88px;
+      img {
+        width: 100%;
+      }
+    }
+    .customers__dataTitle {
+      margin: 24px 0 8px 0;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 138%;
+      @include fontManrope;
+      color: #414141;
+    }
+    .customers__dataText {
+      font-size: 14px;
+      line-height: 142%;
+      color: #818181;
+      @include fontManrope;
+      letter-spacing: 0.0168em;
+      max-width: 245px;
+      text-align: center;
+      margin-bottom: 40px;
+
+    }
+  }
+}
+
+
+.customers::ng-deep  {
+  .mat-paginator-container {
+    background-color: #fff;
+    .mat-paginator-page-size-select {
+      margin: 0;
+      width: 80px;
+    }
+    .mat-paginator-page-size-label {
+      color: #818181;
+      font-size: 14px;
+      line-height: 142%;
+      letter-spacing: 0.0168em;
+      @include fontManrope;
+    }
+    .mat-form-field-infix {
+      border: 1px solid #A1A1A1;
+      box-sizing: border-box;
+      border-radius: 8px;
+      padding: 5px;
+    }
+    .mat-paginator-range-label {
+      color: #818181;
+    }
+    .mat-select-min-line {
+      color: #000000;
+    }
+    .mat-select-arrow {
+      color: #000000;
+    }
+    .mat-paginator-range-actions  {
+      color: #818181;
+    }
+    .mat-button-wrapper {
+      color: #818181;
+    }
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-option-text {
+      color: red;
+    }
+  }
+}
+
+
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-icon {
+  background-color: transparent;
+  margin-right: 18px;
+  color: #616161;
+}
+.mat-toolbar-row,.mat-toolbar-single-row {
+  background-color: transparent;
+  padding: 0;
+}
+.example__title {
+  color: #000000;
+}

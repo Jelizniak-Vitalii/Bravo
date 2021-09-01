@@ -1,0 +1,37 @@
+<div class="menu">
+  <div class="menu__navBar">
+    <div [ngClass]="activeMenu ? 'menu__logo' : 'activeLogo' ">
+      <img *ngIf="activeMenu; else logo" src="./assets/images/logo/fullLogo.png">
+      <ng-template #logo>
+        <img src="./assets/images/logo/logo.png">
+      </ng-template>
+    </div>
+    <nav class="menu__nav">
+      <ul class="menu__nav_ul">
+        <li routerLink="/main/orders" routerLinkActive="active" [ngClass]="activeMenu ? 'menu__nav_li' : 'activeLi'">
+          <div class="menu__img">
+          <img src="./assets/images/menu/shopping-cart.png" alt="Orders">
+        </div>
+          <span *ngIf="activeMenu">Orders</span>
+        </li>
+        <li routerLink="/main/catalog" routerLinkActive="active" [ngClass]="activeMenu ? 'menu__nav_li' : 'activeLi'">
+          <div class="menu__img">
+            <img src="./assets/images/menu/tag.png" alt="Catalog">
+          </div>
+          <span *ngIf="activeMenu">Catalog</span>
+        </li>
+        <li routerLink='/main/customers' routerLinkActive="active" [ngClass]="activeMenu ? 'menu__nav_li' : 'activeLi'">
+          <div class="menu__img">
+            <img src="./assets/images/menu/user.png" alt="Customers">
+          </div>
+          <span *ngIf="activeMenu">Customers</span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="menu__logOut" (click)="logOut()">
+    <img src="./assets/images/menu/log-out.png">
+    <button *ngIf="activeMenu" class="menu__btn_logOut">Log Out</button>
+  </div>
+</div>
+

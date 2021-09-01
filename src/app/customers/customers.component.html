@@ -1,0 +1,72 @@
+<div class="customers">
+  <mat-toolbar>
+    <button (click)="showMenu()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example__title">Customers</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+  <app-search (input)="renderUserData($event, status)"></app-search>
+
+  <div class="customers__content">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="customerNo">
+        <th mat-header-cell *matHeaderCellDef>Customer No</th>
+        <td mat-cell *matCellDef="let element">{{element.customerNo}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.userName}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="deliveryAddress">
+        <th mat-header-cell *matHeaderCellDef>Address</th>
+        <td mat-cell *matCellDef="let element">{{element.deliveryAddress}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="deliveryDays">
+        <th mat-header-cell *matHeaderCellDef>Delivery Days</th>
+        <td mat-cell *matCellDef="let element">{{element.days | sortObjectKeys}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns;"
+        (click)="choiceCustomer(row)"
+      ></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="9999">
+          <div  class="customers__data" >
+            <div class="customers__dataImg">
+              <img src="./assets/images/customers/noData.png">
+            </div>
+            <h3 class="customers__dataTitle">No Data to Display</h3>
+            <p class="customers__dataText">Seems like you don’t have any customer yet. Let’s create it now!</p>
+          </div>
+        </td>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+

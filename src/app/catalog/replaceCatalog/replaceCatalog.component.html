@@ -1,0 +1,35 @@
+<app-modal-window>
+    <div class="replace">
+      <div class="replace__header">
+        <h3 class="replace__title">Edit Customer</h3>
+        <img mat-button mat-dialog-close class="form__close" src="./assets/images/search/close.png">
+      </div>
+      <p class="replace__text">Drops the existing catalog and imports the new one</p>
+      <ngx-dropzone (change)="onSelect($event)" *ngIf="isLoaded; else dropActive">
+        <ngx-dropzone-label>Drag or Click here to upload files</ngx-dropzone-label>
+        <p>Note, that only .CSV files are supported</p>
+      </ngx-dropzone>
+
+      <ng-template #dropActive>
+        <ngx-dropzone-preview class="drop" *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+          <ngx-dropzone-label><img src="./assets/images/catalog/Union.png">{{ f.name }} {{kb}}</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ng-template>
+
+      <div class="download">
+        <a class="download__link" href="assets/template.csv" download>
+          <mat-icon class="icon">file_download</mat-icon>
+          <b>Download</b>
+        </a>
+        <span class="download__text"> our Template as a help.</span>
+      </div>
+
+      <span class="form__line"></span>
+      <div class="form__btnGroup">
+        <button mat-button mat-dialog-close class="form__btn_cancel">Cancel</button>
+        <button class="form__btn_replace"><img src="./assets/images/catalog/check.png">Replace Catalog</button>
+      </div>
+    </div>
+</app-modal-window>
+
+

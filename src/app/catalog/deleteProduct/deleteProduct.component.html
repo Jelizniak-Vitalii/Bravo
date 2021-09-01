@@ -1,0 +1,14 @@
+<app-modal-window>
+  <div class="delete__content">
+    <div class="delete__header">
+      <h3 class="delete__title">Edit Customer</h3>
+      <img class="delete__close" src="./assets/images/search/close.png" mat-button mat-dialog-close>
+    </div>
+    <p class="delete__text">Are you sure you want to delete {{data.name}} from the catalog?</p>
+    <span class="delete__line"></span>
+    <div class="delete__btnGroup">
+      <button mat-button mat-dialog-close class="delete__btn_cancel">Cancel</button>
+      <button (click)="deleteProduct()" class="delete__btn_delete"><img src="./assets/images/catalog/trash.png">Delete</button>
+    </div>
+  </div>
+</app-modal-window>

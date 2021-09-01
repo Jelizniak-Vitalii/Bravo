@@ -1,0 +1,111 @@
+<div class="catalog">
+  <mat-toolbar>
+    <button (click)="showMenu()" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example__title">Catalog</span>
+    <span class="example-spacer"></span>
+    <div class="change__catalog">
+      <app-btn-replace-catalog (click)="replaceCatalog()"></app-btn-replace-catalog>
+      <app-btn-add-product (click)="addProduct()"></app-btn-add-product>
+
+      <div *ngIf="showConfirmProductAdd" class="change__confirm">
+        <span class="change__confirm_img"><img src="assets/images/catalog/check.png"></span>
+        <div class="change__content">
+          <span>Product Add</span>
+          <p class="change__text">Product was added sucesfully</p>
+        </div>
+        <span class="change__close" (click)="showConfirmProductAdd = !showConfirmProductAdd"><img src="assets/images/search/close.png"></span>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <app-search (input)="searchProducts($event)"></app-search>
+
+  <div class="catalog__content">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="productCode">
+        <th mat-header-cell *matHeaderCellDef>Product Code</th>
+        <td mat-cell *matCellDef="let element">{{element.productCode}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Unit">
+        <th mat-header-cell *matHeaderCellDef>Unit</th>
+        <td mat-cell *matCellDef="let element">{{element.unit}} {{element.units.length ? element.units.length + '+' + 'more' : ''}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let element">{{element.price}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Availability" >
+        <th class="availability" mat-header-cell *matHeaderCellDef>Availability
+          <img (click)="showModalAvailability()"
+               src="./assets/images/catalog/sort-size.png">
+        <form
+          (input)="submitAvailability()"
+          class="availability__modal"
+          [ngStyle]="availabilityModal ? {'display': 'flex'} : {'display': 'none'}"
+          [formGroup]="form">
+          <span>
+            <input id="inStock" formControlName="inStock" type="checkbox">
+            <label for="inStock">In Stock</label>
+          </span>
+          <span>
+            <input id="outOfStock" formControlName="outOfStock" type="checkbox">
+            <label for="outOfStock">Out of Stock</label>
+          </span>
+          <span>
+            <input id="discontinued" formControlName="discontinued" type="checkbox">
+            <label for="discontinued">Discontinued</label>
+          </span>
+        </form>
+        </th>
+        <td mat-cell *matCellDef="let element">{{element.availability | sortObjectKeys}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element"><img (click)="deleteProduct(element)" class=" catalog__delete" src="./assets/images/catalog/trash.png"></td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="9999">
+          <div  class="catalog__data" >
+            <div class="catalog__dataImg">
+              <img src="./assets/images/customers/noData.png">
+            </div>
+            <h3 class="catalog__dataTitle">No Data to Display</h3>
+            <p class="catalog__dataText">
+              Seems like you don’t have any
+              product yet. Let’s create it now!</p>
+            <div class="catalog__data_buttons">
+              <app-btn-replace-catalog></app-btn-replace-catalog>
+              <app-btn-add-product></app-btn-add-product>
+            </div>
+          </div>
+        </td>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>
+<router-outlet></router-outlet>
